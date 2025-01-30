@@ -1,0 +1,51 @@
+[gd_scene load_steps=8 format=3 uid="uid://ctsrr75gsf332"]
+
+[ext_resource type="Texture2D" uid="uid://bb8eijlkgn1ir" path="res://resources/sprites/hostile/Antemy.png" id="1_dxeuv"]
+[ext_resource type="Script" path="res://scripts/hostile/antemy.gd" id="1_qy8e4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gcf4e"]
+size = Vector2(48, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mawx6"]
+size = Vector2(40, 8)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4alpq"]
+size = Vector2(32, 12)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7sodw"]
+size = Vector2(40, 12)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rhh6d"]
+size = Vector2(5, 12)
+
+[node name="Antemy" type="Node2D"]
+script = ExtResource("1_qy8e4")
+
+[node name="AntemySprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_dxeuv")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, -2)
+shape = SubResource("RectangleShape2D_gcf4e")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, -16)
+shape = SubResource("RectangleShape2D_mawx6")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, -26)
+shape = SubResource("RectangleShape2D_4alpq")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, 14)
+shape = SubResource("RectangleShape2D_7sodw")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-22, 26)
+shape = SubResource("RectangleShape2D_rhh6d")
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(22, 26)
+shape = SubResource("RectangleShape2D_rhh6d")

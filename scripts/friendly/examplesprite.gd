@@ -39,5 +39,9 @@ func _input(event: InputEvent) -> void:
 			var bull = Bullet.instantiate()
 			bull.set_x_y(position.x, position.y) 
 			get_tree().current_scene.add_child(bull)
+	if event.is_action_pressed("H_Key"):
+		nodee.texture = load("res://resources/sprites/friendly/heart.png")
+	if event.is_action_pressed("ESC_Key"):
+		get_tree().quit()
 func _on_area_2d_area_entered(area: Area2D) -> void:
 	nodee.texture = load("res://resources/sprites/friendly/heart_hit.png")

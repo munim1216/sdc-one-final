@@ -1,10 +1,14 @@
-[gd_scene load_steps=3 format=3 uid="uid://bv1o1syitvmar"]
+[gd_scene load_steps=4 format=3 uid="uid://bv1o1syitvmar"]
 
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_kej3y"]
 [ext_resource type="PackedScene" uid="uid://brxbdms2lu1qq" path="res://scenes/friendly/examplesprite.tscn" id="1_vt0mh"]
+[ext_resource type="PackedScene" uid="uid://ctsrr75gsf332" path="res://scenes/hostile/antemy.tscn" id="3_ouxnc"]
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_kej3y")
 
 [node name="examplesprite" parent="." instance=ExtResource("1_vt0mh")]
 position = Vector2(228, 155)
+
+[node name="Antemy" parent="." instance=ExtResource("3_ouxnc")]
+position = Vector2(569, 39)
