@@ -25,6 +25,6 @@ func _process(delta: float) -> void:
 		timer = 0
 		queue_free()
 		movemet_type = randi_range(1,4)
-func set_x_slash_y(x: int, y: int):
+func set_x_y(x: int, y: int):
 	position.x = x
 	position.y = y

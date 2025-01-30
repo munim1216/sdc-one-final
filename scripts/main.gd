@@ -13,13 +13,11 @@ func _process(delta: float) -> void:
 		if dt > 0.15:
 			dt -= 0.15
 			var bull = Bullet.instantiate()
-			print("accessed")
 			bull.set_x_y(randi_range(0, 1500), 10) 
 			get_tree().current_scene.add_child(bull)
 	elif rare == 2:
 		if dt > 0.15:
-			print("slashying tha")
 			dt -= 0.15
 			var cut = Slash.instantiate()
-			cut.set_x_slash_y(randi_range(10,1490), randi_range(10,740))
+			cut.set_x_y(randi_range(10,1490), randi_range(10,740))
 			get_tree().current_scene.add_child(cut)
