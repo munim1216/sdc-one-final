@@ -27,25 +27,31 @@ texture = ExtResource("1_dxeuv")
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+visibility_layer = 2
 position = Vector2(0, -2)
 shape = SubResource("RectangleShape2D_gcf4e")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D"]
+visibility_layer = 2
 position = Vector2(0, -16)
 shape = SubResource("RectangleShape2D_mawx6")
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="Area2D"]
+visibility_layer = 2
 position = Vector2(0, -26)
 shape = SubResource("RectangleShape2D_4alpq")
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="Area2D"]
+visibility_layer = 2
 position = Vector2(0, 14)
 shape = SubResource("RectangleShape2D_7sodw")
 
 [node name="CollisionShape2D5" type="CollisionShape2D" parent="Area2D"]
+visibility_layer = 2
 position = Vector2(-22, 26)
 shape = SubResource("RectangleShape2D_rhh6d")
 
 [node name="CollisionShape2D6" type="CollisionShape2D" parent="Area2D"]
+visibility_layer = 2
 position = Vector2(22, 26)
 shape = SubResource("RectangleShape2D_rhh6d")

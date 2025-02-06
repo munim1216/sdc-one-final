@@ -20,3 +20,6 @@ func _process(delta):
 	elif position.x > RIGHT_BOUND:
 		position.x = RIGHT_BOUND
 		direction = -1  # Change direction to left
+
+func spawn_attack_two():
+	pass
