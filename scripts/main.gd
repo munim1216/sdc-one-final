@@ -9,7 +9,7 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	dt += delta
 	var rare = randi_range(1,2)
-	if rare == 1:
+	if rare == 0:
 		if dt > 0.15:
 			dt -= 0.15
 			var bull = Bullet.instantiate()

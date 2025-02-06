@@ -45,3 +45,4 @@ func _input(event: InputEvent) -> void:
 		get_tree().quit()
 func _on_area_2d_area_entered(area: Area2D) -> void:
 	nodee.texture = load("res://resources/sprites/friendly/heart_hit.png")
+	
