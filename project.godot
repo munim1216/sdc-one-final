@@ -53,6 +53,11 @@ ESC_Key={
 ]
 }
 
+[layer_names]
+
+2d_physics/layer_1="Hostile"
+2d_physics/layer_2="frendly"
+
 [rendering]
 
 renderer/rendering_method="mobile"
