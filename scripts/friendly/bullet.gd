@@ -5,7 +5,7 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	position.y -= 1000 * delta
-	if position.y < -100:
+	if position.y < 0:
 		queue_free()
 func set_x_y(x: int, y: int):
 	position.x = x
