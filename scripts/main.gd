@@ -9,13 +9,13 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	dt += delta
 	var rare = randi_range(1,2)
-	if rare == 1:
+	if rare == 0:
 		if dt > 0.15:
 			dt -= 0.15
 			var bull = Bullet.instantiate()
 			bull.set_x_y(randi_range(0, 1500), 10) 
 			get_tree().current_scene.add_child(bull)
-	elif rare == 2:
+	elif rare == 0:
 		if dt > 0.15:
 			dt -= 0.15
 			var cut = Slash.instantiate()
