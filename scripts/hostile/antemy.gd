@@ -6,8 +6,9 @@ const LEFT_BOUND = 32
 const RIGHT_BOUND = 1152 -32
 var time = 0
 var spawn_delay = 1
-var max_enemy_spawn = 6
+var max_enemy_spawn = 10
 var damage = 0
+var last_area = []
 # Called when the node enters the scene tree for the first time.
 
 func spwan_attack_one(timer):
@@ -22,8 +23,10 @@ func spwan_attack_one(timer):
 	await get_tree().create_timer(timer).timeout
 	get_tree().current_scene.add_child(bullet)
 	print("spawn bullet")
+	
 func _ready():
 	position.x = CENTER
+	
 var speed = 500
 var direction = 1
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -47,12 +50,11 @@ func _process(delta):
 		await get_tree().create_timer(.5).timeout
 		print("Victory")
 		queue_free()
+		
 func _physics_process(_delta):
 	if len($Area2D.get_overlapping_areas()) > 0:
-		damage += (100.0/10.0)/8.0
-		print("Damages", damage)
-		await get_tree().create_timer(.5).timeout
-		
-func _on_area_2d_area_entered(_area: Area2D) -> void:
-	damage += 1
-	print("damage", damage)
+		if $Area2D.get_overlapping_areas() not in last_area:
+			last_area.append($Area2D.get_overlapping_areas())
+			damage += 4
+			print("Damages")
+			await get_tree().create_timer(.5).timeout
