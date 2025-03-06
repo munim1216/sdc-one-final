@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://ctsrr75gsf332"]
+
+[ext_resource type="Script" path="res://scripts/hostile/antemy.gd" id="1_qy8e4"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_tew35"]
+load_path = "res://.godot/imported/New_antemy.png-549436cbb129f099a4293b12c7cc6af0.ctex"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f25tg"]
+size = Vector2(64, 49)
+
+[node name="Antemy" type="Node2D"]
+script = ExtResource("1_qy8e4")
+
+[node name="AntemySprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+scale = Vector2(4, 4)
+texture = SubResource("CompressedTexture2D_tew35")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, -8)
+shape = SubResource("RectangleShape2D_f25tg")
