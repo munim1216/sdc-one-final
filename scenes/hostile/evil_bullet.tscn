@@ -1,19 +1,23 @@
 [gd_scene load_steps=4 format=3 uid="uid://cqohvychtognl"]
 
 [ext_resource type="Script" path="res://scripts/hostile/evil_bullet.gd" id="1_hqvqd"]
-[ext_resource type="Texture2D" uid="uid://bnna6frvfghts" path="res://resources/sprites/hostile/evilbullet.png" id="2_jibcr"]
+[ext_resource type="Texture2D" uid="uid://db7t0nuerhwqa" path="res://resources/sprites/hostile/Ant_bullet.png" id="2_e2cfj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_edu7j"]
-size = Vector2(24, 36)
+size = Vector2(61, 43)
 
 [node name="EvilBullet" type="Node2D"]
 script = ExtResource("1_hqvqd")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_jibcr")
+texture_filter = 1
+scale = Vector2(4, 4)
+texture = ExtResource("2_e2cfj")
 
 [node name="Area2D" type="Area2D" parent="."]
 collision_mask = 10
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+texture_filter = 1
+position = Vector2(-1.5, -0.5)
 shape = SubResource("RectangleShape2D_edu7j")
