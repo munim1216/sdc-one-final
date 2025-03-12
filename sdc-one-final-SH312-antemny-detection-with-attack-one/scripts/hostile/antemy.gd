@@ -6,7 +6,7 @@ const LEFT_BOUND = 32
 const RIGHT_BOUND = 1152 -32
 var time = 0
 var spawn_delay = 1
-var max_enemy_spawn = 5
+var max_enemy_spawn = 4
 var damage = 0
 var last_area = []
 # Called when the node enters the scene tree for the first time.
@@ -58,3 +58,5 @@ func _physics_process(_delta):
 			damage += 10
 			print("Damages")
 			await get_tree().create_timer(.5).timeout
+func test():
+	print("Hello World")

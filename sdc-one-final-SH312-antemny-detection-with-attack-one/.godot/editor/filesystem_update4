@@ -1,0 +1,5 @@
+res://scenes/main.tscn
+res://scripts/main.gd
+res://scenes/friendly/bullet.tscn
+res://scripts/hostile/antemy.gd
+res://scripts/friendly/examplesprite.gd

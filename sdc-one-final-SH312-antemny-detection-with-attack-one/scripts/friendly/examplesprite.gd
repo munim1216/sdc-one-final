@@ -17,9 +17,12 @@ const current_right_stand = ["Stand_right_damage_2","Stand_right_damage_1","Stan
 const movement_speed = 700
 var lives = 3
 var index = 2
+var is_alive = true
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	nodee.play("Stand_down_full_health") # Replace with function body.
+	nodee.play("Stand_down_full_health") 
+	is_alive = true# Replace with function body.
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	if lives > 0:
@@ -52,10 +55,11 @@ func _process(delta: float) -> void:
 			position.x -= (movement_speed * delta)/sqrt(2)
 			nodee.play(current_left_run[index])
 	else:
+		is_alive = false
 		print("Dead")
 		nodee.play("death_animation")
 		await get_tree().create_timer(3).timeout
-		nodee.pause()
+		queue_free()
 func _input(event: InputEvent) -> void:
 	if lives > 0:
 		if event.is_action_pressed("W_Key") or event.is_action_pressed("Up_Key"):
@@ -115,3 +119,6 @@ func _on_area_2d_area_entered(_area: Area2D) -> void:
 			nodee.play(current_up_run[index])
 		elif (current_animation in current_up_stand):
 			nodee.play(current_up_stand[index])
+
+func am_dead():
+	return is_alive
