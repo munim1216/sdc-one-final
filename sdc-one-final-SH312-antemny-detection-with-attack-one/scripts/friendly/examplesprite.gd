@@ -90,10 +90,6 @@ func _input(event: InputEvent) -> void:
 				can_shoot = false
 				await get_tree().create_timer(.5).timeout
 				can_shoot = true
-	if event.is_action_pressed("H_Key"):
-		lives = 3
-		index = 2
-		nodee.play(current_down_stand[index])
 	if event.is_action_pressed("ESC_Key"):
 		get_tree().quit()
 func _on_area_2d_area_entered(_area: Area2D) -> void:
