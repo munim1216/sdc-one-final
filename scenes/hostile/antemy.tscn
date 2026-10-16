@@ -1,0 +1,41 @@
+[gd_scene load_steps=7 format=3 uid="uid://ctsrr75gsf332"]
+
+[ext_resource type="Script" uid="uid://f8ryj4bv3igu" path="res://scripts/hostile/antemy.gd" id="1_qy8e4"]
+[ext_resource type="Script" uid="uid://ni0fbhypf2ow" path="res://scripts/guidelines/texture_progress_bar.gd" id="2_h43x1"]
+[ext_resource type="Texture2D" uid="uid://cvlwvgc374qaj" path="res://resources/sprites/hostile/red_health_bar.png" id="2_ootkf"]
+[ext_resource type="Texture2D" uid="uid://b8dvr06ncodd1" path="res://resources/sprites/hostile/green_health_bar.png" id="3_hre8v"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_tew35"]
+load_path = "res://.godot/imported/New_antemy.png-549436cbb129f099a4293b12c7cc6af0.ctex"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f25tg"]
+size = Vector2(64, 49)
+
+[node name="Antemy" type="Node2D"]
+script = ExtResource("1_qy8e4")
+
+[node name="AntemySprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+scale = Vector2(4, 4)
+texture = SubResource("CompressedTexture2D_tew35")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, -8)
+shape = SubResource("RectangleShape2D_f25tg")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="CanvasLayer"]
+offset_left = -30.0
+offset_top = -40.0
+offset_right = 30.0
+offset_bottom = -34.0
+value = 100.0
+nine_patch_stretch = true
+texture_under = ExtResource("2_ootkf")
+texture_progress = ExtResource("3_hre8v")
+script = ExtResource("2_h43x1")

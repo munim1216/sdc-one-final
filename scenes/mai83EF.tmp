@@ -1,0 +1,22 @@
+[gd_scene load_steps=6 format=3 uid="uid://bv1o1syitvmar"]
+
+[ext_resource type="Script" path="res://scripts/main.gd" id="1_kej3y"]
+[ext_resource type="PackedScene" uid="uid://brxbdms2lu1qq" path="res://scenes/friendly/examplesprite.tscn" id="1_vt0mh"]
+[ext_resource type="PackedScene" uid="uid://ctsrr75gsf332" path="res://scenes/hostile/antemy.tscn" id="3_ouxnc"]
+[ext_resource type="Script" path="res://scripts/guidelines/texture_rect.gd" id="3_wvsgs"]
+[ext_resource type="Texture2D" uid="uid://bndbis4ghp87h" path="res://resources/backgrounds/game_bg.png" id="4_pgge7"]
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_kej3y")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_right = 1152.0
+offset_bottom = 646.0
+texture = ExtResource("4_pgge7")
+script = ExtResource("3_wvsgs")
+
+[node name="examplesprite" parent="." instance=ExtResource("1_vt0mh")]
+position = Vector2(578, 343)
+
+[node name="Antemy" parent="." instance=ExtResource("3_ouxnc")]
+position = Vector2(569, 39)
